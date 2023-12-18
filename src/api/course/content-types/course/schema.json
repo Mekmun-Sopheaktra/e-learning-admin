@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "singularName": "course",
+    "pluralName": "courses",
+    "displayName": "course",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "author": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "integer"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "collections": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::collection.collection",
+      "mappedBy": "courses"
+    },
+    "recommend": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::recommend.recommend",
+      "mappedBy": "course"
+    },
+    "popular": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::popular.popular",
+      "mappedBy": "course"
+    },
+    "videoTrailerURL": {
+      "type": "string"
+    },
+    "playlist_video_urls": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::playlist-video-url.playlist-video-url",
+      "mappedBy": "course"
+    },
+    "ABAPaymentURL": {
+      "type": "string"
+    },
+    "course_user_link": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course-user-link.course-user-link",
+      "mappedBy": "course"
+    },
+    "documentURL": {
+      "type": "string"
+    },
+    "examURL": {
+      "type": "string"
+    },
+    "telegramURL": {
+      "type": "string"
+    }
+  }
+}

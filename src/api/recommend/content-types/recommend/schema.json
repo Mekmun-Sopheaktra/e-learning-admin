@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recommends",
+  "info": {
+    "singularName": "recommend",
+    "pluralName": "recommends",
+    "displayName": "recommend",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "course": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course.course",
+      "inversedBy": "recommend"
+    }
+  }
+}

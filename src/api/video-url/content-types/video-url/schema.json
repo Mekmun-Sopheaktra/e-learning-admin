@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "video_urls",
+  "info": {
+    "singularName": "video-url",
+    "pluralName": "video-urls",
+    "displayName": "VideoURL",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "playlist_video_url": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::playlist-video-url.playlist-video-url",
+      "inversedBy": "video_urls"
+    },
+    "videoURL": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}
